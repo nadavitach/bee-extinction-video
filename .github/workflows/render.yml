@@ -30,10 +30,10 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Render video (optimized)
+      - name: Render video
         run: |
           npx remotion render src/index.ts BeeExtinctionVideo dist/video.mp4 \
-            --concurrency=7 \
+            --concurrency=4 \
             --codec=h264 \
             --timeout=90000 \
             --headless=true \
