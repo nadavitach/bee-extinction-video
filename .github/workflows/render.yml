@@ -8,7 +8,7 @@ on:
 jobs:
   render:
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 60
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -30,14 +30,14 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Render video
+      - name: Render video (optimized)
         run: |
           npx remotion render src/index.ts BeeExtinctionVideo dist/video.mp4 \
-            --concurrency=4 \
+            --concurrency=7 \
             --codec=h264 \
-            --timeout=180000 \
+            --timeout=90000 \
             --headless=true \
-            --gl=angle-egl
+            --gl=angle
 
       - name: Upload video artifact
         uses: actions/upload-artifact@v4
