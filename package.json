@@ -1,0 +1,35 @@
+{
+  "name": "bee-extinction-video",
+  "version": "1.0.0",
+  "description": "Minecraft-style vertical video: what happens when bees disappear",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "remotion bundle src/index.ts dist/bundle.js",
+    "dev": "remotion studio src/index.ts",
+    "render": "remotion render src/index.ts BeeExtinctionVideo dist/video.mp4",
+    "render:preview": "remotion render src/index.ts BeeExtinctionVideo dist/preview.mp4 --props={\"preview\":true}",
+    "lint": "eslint src --ext .ts,.tsx"
+  },
+  "dependencies": {
+    "remotion": "4.0.273",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "@remotion/bundler": "4.0.273",
+    "@remotion/cli": "4.0.273",
+    "@remotion/player": "4.0.273",
+    "@remotion/three": "4.0.273",
+    "@remotion/zod-types": "4.0.273",
+    "@react-three/fiber": "8.15.19",
+    "@react-three/drei": "9.92.7",
+    "three": "0.165.0",
+    "zod": "3.23.8"
+  },
+  "devDependencies": {
+    "@remotion/eslint-config": "4.0.273",
+    "@types/react": "18.3.12",
+    "@types/react-dom": "18.3.1",
+    "@types/three": "0.165.0",
+    "typescript": "5.6.3",
+    "eslint": "8.57.1"
+  }
+}
